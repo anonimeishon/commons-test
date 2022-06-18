@@ -4,14 +4,15 @@
   "description": "commons repos for the insrance core",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@nestjs/common": "^8.4.7",
     "aws-sdk": "^2.1157.0",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "typescript": "^4.7.4"
   },
   "devDependencies": {
     "@types/node": "^18.0.0"

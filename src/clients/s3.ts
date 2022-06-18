@@ -1,5 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { S3 } from "aws-sdk";
+import { AWSError } from "../../node_modules/aws-sdk/index";
 import config from "../configs/aws.config";
 // import * as AWS from 'aws-sdk';
 
@@ -8,9 +9,7 @@ const s3 = new S3(config.AWSS3Config);
 @Injectable()
 export class S3Client {
   constructor() {}
-  async listFiles(
-    folder: string
-  ): Promise<S3.ListObjectsOutput | AWS.AWSError> {
+  async listFiles(folder: string): Promise<S3.ListObjectsOutput | AWSError> {
     let listParams: S3.ListObjectsRequest = {
       ...config.S3ConfigDownload,
       Prefix: folder,
